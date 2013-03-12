@@ -97,7 +97,9 @@
 (define (lookup-pair-dict dict var) (assq var dict))
 (define (merge-dict dict1 dict2) (append dict2 dict1))
 (define (product-same-key-dicts . dicts)
-  (map (lambda pairs (caar pairs (map cdr pairs))) . dicts))
+  (apply map
+         (lambda pairs (cons (caar pairs) (map cdr pairs)))
+         dicts))
 (define (keys-dict dict) (map car dict))
 
 (define make-empty-env-frame make-empty-dict)

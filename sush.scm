@@ -1,3 +1,8 @@
+(load "./structure.scm")
+(load "./eval.scm")
+(load "./macro.scm")
+(load "./builtin.scm")
+
 (define (repl)
   (let ((stack (make-top-stack)))
     (define (loop)

@@ -12,6 +12,7 @@ a
 l
 (car (cdr l))
 (define b 1)
+(let ((a 10) (b (f a))) (+ a b))
 (let ((a 10) (b (f a)) (c (- b 1))) (+ a b c) (let ((a 10) (b (f a)) (c (- b 1))) (+ (+ a b) c)))
 a
 (define h (lambda (x) (lambda (y) (+ x (* a y)))))
@@ -20,5 +21,5 @@ a
 (fact 10)
 ))
 
-(load "./92-scheme.scm")
+(load "./sush.scm")
 (top-eval-write tests)
